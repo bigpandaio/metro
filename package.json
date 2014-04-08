@@ -1,0 +1,31 @@
+{
+  "name": "metro",
+  "version": "0.9.0",
+  "description": "Pipeline for sending metric to configurable endpoints",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bigpandaio/metro.git"
+  },
+  "keywords": [
+    "metric"
+  ],
+  "author": "BigPanda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bigpandaio/metro/issues"
+  },
+  "homepage": "https://github.com/bigpandaio/metro",
+  "dependencies": {
+    "underscore": "1.6.0",
+    "q": "1.0.1"
+  },
+  "devDependencies": {
+    "mocha": "1.18.2",
+    "chai": "1.9.1",
+    "sinon": "^1.9.1"
+  }
+}
