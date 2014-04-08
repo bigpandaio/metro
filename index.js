@@ -10,7 +10,7 @@ module.exports = {
     return this.cache[name];
 
   },
-  retrieve: function(name) {
+  get: function(name) {
     if (!name || !this.cache[name]) {
       return null;
     }
