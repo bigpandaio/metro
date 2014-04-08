@@ -1,4 +1,4 @@
-module.exports = require('./lib/metro').Metro;
+var Metro = require('./lib/metro').Metro;
 
 module.exports = {
   cache: {},
