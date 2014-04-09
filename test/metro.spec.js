@@ -40,7 +40,7 @@ describe('Test Metro', function() {
 
   it('Metro with 2 piplines', function() {
     mockTestPipeline.expects("send").once().withArgs('test', 2, 'ms').returns();
-    var consolePipe = require('./../lib/pipelines/console')
+    var consolePipe = metro.pipelineCreator('console', 'test.',{t:12})
     metro.create('default2', [testPipeline,consolePipe]);
     return metro.get('default2').send('test', 2, 'ms').then(function() {
       return mockTestPipeline.verify();

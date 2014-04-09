@@ -1,4 +1,4 @@
 metro
 =====
 
-Pipeline for sending metric to configurable endpoints
+Module for sending metric to configurable pipelines
