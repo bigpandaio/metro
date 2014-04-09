@@ -16,5 +16,15 @@ module.exports = {
     }
 
     return this.cache[name];
+  },
+
+  pipelineCreator: function(name) {
+    var factory = require('./lib/pipelines/' + name);
+    if (!factory) {
+      return false;
+    }
+
+    Array.prototype.shift.apply(arguments);
+    return factory.apply(null,arguments);
   }
 }
