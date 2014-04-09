@@ -1,6 +1,6 @@
 {
   "name": "metro",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Pipeline for sending metric to configurable endpoints",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,6 @@
   "devDependencies": {
     "mocha": "1.18.2",
     "chai": "1.9.1",
-    "sinon": "^1.9.1"
+    "sinon": "1.9.1"
   }
 }
