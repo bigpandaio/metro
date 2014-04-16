@@ -58,6 +58,12 @@ describe('Test Metro', function() {
     return metro.get('default3');
   })
 
+  it('Metro without pipelines and then add', function() {
+    var m = metro.create('default3');
+    m.addPipeline(metro.pipelineCreator('console'));
+    return metro.get('default3');
+  })
+
   it('Send few times',function() {
     mockTestPipeline.expects("send").thrice().withArgs('test', 1, 'ms').returns();
     return Q.all([metro.get('default').send('test', 1, 'ms'),
