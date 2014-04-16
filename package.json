@@ -1,6 +1,6 @@
 {
   "name": "metro",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "Pipeline for sending metric to configurable endpoints",
   "main": "index.js",
   "scripts": {
