@@ -1,3 +1,44 @@
+sudo: true
+dist: trusty
+group: travis_latest
 language: node_js
+
 node_js:
-  - "0.10"
+  - 8.9.0
+
+env:
+  global:
+    - REPO_NAME=${TRAVIS_REPO_SLUG##*\/}
+    - BUCKET_NAME=npm.bigpanda.io
+    - REGION_NAME=eu-west-1
+    - CC=clang CXX=clang++ npm_config_clang=1
+
+cache:
+  directories:
+    - ./node_modules
+    - ./opt
+
+install:
+  - npm install --no-optional
+
+script:
+  - npm test
+
+before_deploy:
+  - package=$(npm pack)
+  - mkdir output
+  - mv ${package} output/${REPO_NAME}-${TRAVIS_TAG:-$TRAVIS_BRANCH}.tgz
+
+deploy:
+  - provider: s3
+    access_key_id: "${AWS_ACCESS_KEY_ID}"
+    secret_access_key: "${AWS_SECRET_ACCESS_KEY}"
+    bucket: "${BUCKET_NAME}"
+    region: "${REGION_NAME}"
+    local-dir: output
+    upload-dir: "${REPO_NAME}"
+    acl: private
+    detect_encoding: true
+    skip_cleanup: true
+    on:
+      all_branches: true
