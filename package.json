@@ -21,7 +21,7 @@
   "homepage": "https://github.com/bigpandaio/metro",
   "dependencies": {
     "underscore": "1.6.0",
-    "q": "1.0.1",
+    "q": "1.5.1",
     "graphite": "0.0.6"
   },
   "devDependencies": {
